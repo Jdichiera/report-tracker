@@ -1,7 +1,7 @@
 const { ipcMain } = require('electron');
 const electron = require('electron'); // import electron
 const countdown = require('./countdown');
-const ipcMain = electron.ipcMain; // main for main module
+const ipc = electron.ipcMain; // main for main module
 
 const app = electron.app // native app from electron
 const BrowserWindow = electron.BrowserWindow
@@ -34,7 +34,7 @@ app.on('ready', _ => {
 // to the imported countdown method
 // use the event that is sent to reply to the sender
 // Cant use IPC.send because we are using ipcMain
-ipcMain.on('countdown-start', (event, arg) => {
+ipc.on('countdown-start', (event, arg) => {
 	countdown(count => {
 		console.log(count);
 		windows.forEach(window => {
