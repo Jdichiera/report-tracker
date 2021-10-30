@@ -1,1 +1,2 @@
-https://www.electronjs.org/docs/latest/tutorial/context-isolation
+// https://www.electronjs.org/docs/latest/tutorial/context-isolation
+// const { contextBridge } = require('electron')
